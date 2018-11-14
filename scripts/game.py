@@ -10,9 +10,6 @@ game_title = "" # enter the game title in the quotes!
 
 # ---------- initial values ----------
 # these are used to define the starting values of your game variables
-global init_health
-global init_mana
-global boss_health
 init_health = 100
 init_mana = 200
 init_boss_health = 50
@@ -20,14 +17,16 @@ init_boss_health = 50
 
 # ---------- game variables ----------
 # these will be used during the game
-global health
-global mana
-global boss_health
+health = 0
+mana = 0
+boss_health = 0
 
 
 # ---------- some useful functions ----------
 # initialize game variables
 def init():
+    global health
+    global mana
     health = init_health
     mana = init_mana
     
@@ -51,7 +50,9 @@ def game_over(msg):
 
 # room 0: where the game starts
 def room_0():
+    global health
     print("This is the first stage of the game. Create a custom description and get coding!")
+    print("Current health: " + str(health))
 
     choice = input("> ");
 
